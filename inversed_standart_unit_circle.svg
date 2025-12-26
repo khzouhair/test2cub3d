@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="360" viewBox="0 0 360 360">
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#888"/>
+    </marker>
+    <style>
+      .axis { stroke: #999; stroke-width: 1; }
+      .circle { stroke: #4a90e2; stroke-width: 2; fill: none; }
+      .tick { stroke: #bbb; stroke-width: 1; }
+      .label { font: 12px monospace; fill: #ddd; }
+      .main { font: 12px monospace; fill: #fff; }
+      .bg { fill: #222; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="360" height="360"/>
+  <!-- Center and radius -->
+  <g transform="translate(180,180)">
+    <!-- Axes -->
+    <line class="axis" x1="-170" y1="0" x2="170" y2="0"/>
+    <line class="axis" x1="0" y1="-170" x2="0" y2="170"/>
+
+    <!-- Circle -->
+    <circle class="circle" r="140"/>
+
+    <!-- 30° ticks (clockwise increasing) -->
+    <g stroke-linecap="round">
+      <!-- Draw 12 minor ticks -->
+      <g class="tick">
+        <!-- ticks at every 30° -->
+        <!-- Use a little script-like repetition by manual entries -->
+        <!-- 0° -->
+        <line x1="140" y1="0" x2="132" y2="0"/>
+        <!-- 30° -->
+        <line x1="121.244" y1="70" x2="114.239" y2="65.93"/>
+        <!-- 60° -->
+        <line x1="70" y1="121.244" x2="65.93" y2="114.239"/>
+        <!-- 90° -->
+        <line x1="0" y1="140" x2="0" y2="132"/>
+        <!-- 120° -->
+        <line x1="-70" y1="121.244" x2="-65.93" y2="114.239"/>
+        <!-- 150° -->
+        <line x1="-121.244" y1="70" x2="-114.239" y2="65.93"/>
+        <!-- 180° -->
+        <line x1="-140" y1="0" x2="-132" y2="0"/>
+        <!-- 210° -->
+        <line x1="-121.244" y1="-70" x2="-114.239" y2="-65.93"/>
+        <!-- 240° -->
+        <line x1="-70" y1="-121.244" x2="-65.93" y2="-114.239"/>
+        <!-- 270° -->
+        <line x1="0" y1="-140" x2="0" y2="-132"/>
+        <!-- 300° -->
+        <line x1="70" y1="-121.244" x2="65.93" y2="-114.239"/>
+        <!-- 330° -->
+        <line x1="121.244" y1="-70" x2="114.239" y2="-65.93"/>
+      </g>
+    </g>
+
+    <!-- Main angle labels -->
+    <text class="main" x="148" y="-6">0° (1, 0)</text>
+    <text class="main" x="-170" y="-6">180° (-1, 0)</text>
+    <text class="main" x="-40" y="156">90° (0, 1)</text>
+    <text class="main" x="-52" y="-148">270° (0, -1)</text>
+
+    <!-- Axis labels -->
+    <text class="label" x="160" y="14">+X</text>
+    <text class="label" x="-173" y="14">−X</text>
+    <text class="label" x="8" y="-160">−Y (up)</text>
+    <text class="label" x="8" y="170">+Y (down)</text>
+
+    <!-- Clockwise angle arrow -->
+    <path d="M110,-10 A110,110 0 0 1 110,10" stroke="#888" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <text class="label" x="116" y="-16">θ increases clockwise</text>
+  </g>
+</svg>
