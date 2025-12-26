@@ -19,9 +19,27 @@
 */
 
 
+typedef struct s_xy{
+    double	dx;
+	double	dy;
+	double	new_x;
+	double	new_y;
+} t_xy;
 
-
-
+typedef struct s_r{
+	double camera_step;
+	double start_angle;
+	int x;
+	t_ray ray;
+	t_tex *current_tex;
+	double ray_angle;
+	int map_x;
+	int map_y;
+	double wall_x;
+	int line_height;
+	int draw_start;
+	int draw_end;
+} t_r;
 
 
 

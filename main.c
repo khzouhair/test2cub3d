@@ -29,7 +29,7 @@ void    img_building(t_img *img, int width, int height, int ceiling_color, int f
     }
 }
 
-void drawing(t_cub3d *cub3d)/*there's something weird here*/
+void drawing(t_cub3d *cub3d)
 {
 	handle_rotation(&cub3d->data.player, &cub3d->input);
 	update_player_position(&cub3d->data.player, &cub3d->input, cub3d->data.map.map);
@@ -42,12 +42,10 @@ void drawing(t_cub3d *cub3d)/*there's something weird here*/
 
 void init_cub3d(t_cub3d *cub3d, t_map *map)
 {
-	/*initialize mlx*/
 	if (init_mlx(&cub3d->mlx))
 	{
 		printf("Error initializing mlx\n");
 	}
-	/*initialize data*/
 	cub3d->data = init_data(&cub3d->mlx, map);
 	cub3d->wall = init_text(cub3d);
 	if (!cub3d->wall)
@@ -55,9 +53,6 @@ void init_cub3d(t_cub3d *cub3d, t_map *map)
 		ft_alloc(0, 0);
 		exit(1);
 	}
-	// cub3d->data.textures = *init_text(cub3d);
-
-	/*initialize input*/
 	cub3d->input = init_input();
 }
 
